@@ -68,7 +68,7 @@ Now let's create a specialized custom agent that helps brainstorm assignment ide
 
 1. Select your custom agent from the agent dropdown list.
 
-   <img width="379" height="218" alt="copilot agent: assignment brainstorming agent selected" src="../images/custom-agent-dropdown-selection.png" />
+   <img width="379" height="218" alt="copilot agent: assignment brainstorming agent selected" src="https://github.com/RC8Bit/skills-customize-your-github-copilot-experience/blob/main/.github/images/custom-agent-dropdown-selection.png?raw=true" />
 
 1. Start a brainstorming session:
 
@@ -82,7 +82,7 @@ Now let's create a specialized custom agent that helps brainstorm assignment ide
 
 1. Once the agent recommends an assignment, click the **Create this assignment** button to hand off to Agent Mode for implementation.
 
-   <img width="380" alt="Create this assignment handoff button" src="../images/handoff-button.png" />
+   <img width="380" alt="Create this assignment handoff button" src="https://github.com/RC8Bit/skills-customize-your-github-copilot-experience/blob/main/.github/images/handoff-button.png?raw=true" />
 
 1. Commit and push your changes to the `main` branch.
 

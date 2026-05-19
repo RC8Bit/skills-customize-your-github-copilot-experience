@@ -308,11 +308,11 @@ Skills can bundle scripts for deterministic tasks that are better handled by cod
 
 1. Copilot will read the skill, create the assignment, and run the bundled scripts.
 
-   <img width="380" alt="Copilot reading the new-assignment SKILL.md file" src="../images/skill-being-used.png" />
+   <img width="380" alt="Copilot reading the new-assignment SKILL.md file" src="https://github.com/RC8Bit/skills-customize-your-github-copilot-experience/blob/main/.github/images/skill-being-used.png?raw=true" />
 
    Accept any confirmation prompts to let it continue.
 
-   <img width="380" alt="Copilot asking for confirmation to run node scripts" src="../images/node-confirmation.png" />
+   <img width="380" alt="Copilot asking for confirmation to run node scripts" src="https://github.com/RC8Bit/skills-customize-your-github-copilot-experience/blob/main/.github/images/node-confirmation.png?raw=true" />
 
 1. Verify the new assignment appears in the assignments list on the website preview.
 
