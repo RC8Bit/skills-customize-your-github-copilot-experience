@@ -1,0 +1,51 @@
+name: Simon the Verifier
+
+on:
+  push:
+    branches:
+      - "**"
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    name: Simon the Verifier Report
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+
+      - name: Identify changed files
+        id: changed
+        run: |
+          # Handle the first commit case (no parent)
+          if git rev-parse HEAD~1 >/dev/null 2>&1; then
+            git diff --name-only HEAD~1 HEAD | tee changed_files.txt
+          else
+            git show --name-only --format="" HEAD | tee changed_files.txt
+          fi
+          echo "count=$(wc -l < changed_files.txt)" >> "$GITHUB_OUTPUT"
+          echo "Changed files:"
+          cat changed_files.txt
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install openai --quiet
+
+      - name: Run Simon the Verifier
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          COMMIT_SHA: ${{ github.sha }}
+          COMMIT_MESSAGE: ${{ github.event.head_commit.message }}
+          PUSHER: ${{ github.actor }}
+          REPO: ${{ github.repository }}
+          REF: ${{ github.ref }}
+        run: python .github/scripts/verify.py
